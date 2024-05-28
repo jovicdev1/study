@@ -1,8 +1,9 @@
-import win32com.client as win32                                #importa a biblioteca win32com para envio de email
-import time                                                    #importa a biblioteca time para tempo de espera
+import win32com.client as win32                                
+import time                                                    
 
 #parte do envio de email
-outlook = win32.Dispatch('outlook.application')                 #comunica com o outlook
+
+outlook = win32.Dispatch('outlook.application')                 
 
 mail = outlook.CreateItem(0)                           
 
@@ -29,16 +30,16 @@ time.sleep(3)
 print('Email enviado com sucesso!')
 
 
-#ENVIO DE EMAIL PARA DESTINATÁRIO DIFERENTE#
+#ENVIO DE EMAIL PARA DESTINATÁRIO DIFERENTE
 
 
-outlook = win32.Dispatch('outlook.application')                          #comunica com o outlook
+outlook = win32.Dispatch('outlook.application')                          
 
-mail = outlook.CreateItem(0)                                             #cria o email
+mail = outlook.CreateItem(0)                                             
 
-destinatario = input("digite o email do segundo destinatario:")          #destinatario do email enviado
-mail.to = destinatario                                       #envio do email ao destinatario
-mail.Subject = 'FEEDBACK GLPI'                               #título do email
+destinatario = input("digite o email do segundo destinatario:")          
+mail.to = destinatario                                       
+mail.Subject = 'FEEDBACK GLPI'                               
 
 mensagem = '''
 <br>Bom dia!
@@ -47,9 +48,9 @@ mensagem = '''
 <br>
 <br> 
 <br>
-<br>[MENSAGEM AUTOMÁTICA]<br> '''                               #corpo do email
+<br>[MENSAGEM AUTOMÁTICA]<br> '''                               
 
-mail.HTMLBody = mensagem                                        #mensagem do email
-mail.Send()                                                     #envia o email
+mail.HTMLBody = mensagem                                        
+mail.Send()                                                    
 time.sleep(3)
-print("Email enviado com sucesso!")                             #mensagem de confirmação de envio do email
+print("Email enviado com sucesso!")                             
